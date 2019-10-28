@@ -6,14 +6,18 @@ function compareString(s1, s2, s3) {
 class Machine extends React.Component {
   render() {
     const { s1, s2, s3 } = this.props;
+    const fruitStyles = { fontSize: '35px' };
     return (
-      <div>
-        <p>
+      <div className='Machine'>
+        <p
+          style={fruitStyles}
+          className={compareString(s1, s2, s3) ? 'winner' : 'loser'}
+        >
           {s1}
           {s2}
           {s3}
         </p>
-        {compareString(s1, s2, s3) ? <p>You win!</p> : <p>You lose!</p>}
+        <p>{compareString(s1, s2, s3) ? 'You win!' : 'You lose!'}</p>
       </div>
     );
   }

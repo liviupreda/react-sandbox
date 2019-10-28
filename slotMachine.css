@@ -1,0 +1,13 @@
+.Machine {
+  border: 2px solid indigo;
+  background: lightblue;
+  margin: 2px auto;
+}
+
+.winner {
+  background: olivedrab;
+}
+
+.loser {
+  background: orangered;
+}
