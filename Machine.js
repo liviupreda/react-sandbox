@@ -5,19 +5,15 @@ function compareString(s1, s2, s3) {
 
 class Machine extends React.Component {
   render() {
-    const props = this.props;
+    const { s1, s2, s3 } = this.props;
     return (
       <div>
         <p>
-          {props.s1}
-          {props.s2}
-          {props.s3}
+          {s1}
+          {s2}
+          {s3}
         </p>
-        {compareString(props.s1, props.s2, props.s3) ? (
-          <p>You win!</p>
-        ) : (
-          <p>You lose!</p>
-        )}
+        {compareString(s1, s2, s3) ? <p>You win!</p> : <p>You lose!</p>}
       </div>
     );
   }
