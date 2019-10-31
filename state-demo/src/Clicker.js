@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 
 class Clicker extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       num: 0,
-      isWinner: false
+      isWinner: false,
+      max: 10
     };
+    this.randNum = this.randNum.bind(this);
   }
 
-  randNum = () => {
-    let rand = Math.floor(Math.random() * 10) + 1;
+  randNum() {
+    let rand = Math.floor(Math.random() * this.state.max) + 1;
     if (rand === 7) this.setState({ isWinner: true });
     this.setState({ num: rand });
-  };
+  }
 
   render() {
     return (
