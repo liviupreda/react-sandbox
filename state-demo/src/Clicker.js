@@ -16,8 +16,13 @@ class Clicker extends Component {
   render() {
     return (
       <div>
-        <h1>Number is {this.state.num}</h1>
-        <button onClick={this.randNum}>Get Number</button>
+        <h1>Number is: {this.state.num}</h1>
+
+        {this.state.num === 7 ? (
+          <h2>You da man!!</h2>
+        ) : (
+          <button onClick={this.randNum}>Get Number</button>
+        )}
       </div>
     );
   }
