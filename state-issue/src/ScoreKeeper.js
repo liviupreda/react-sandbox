@@ -10,6 +10,10 @@ class ScoreKeeper extends Component {
     return { score: curState.score + 1 };
   };
 
+  singleKill = () => {
+    this.setState(this.incrementScore);
+  };
+
   tripleKill = () => {
     this.setState(this.incrementScore);
     this.setState(this.incrementScore);
