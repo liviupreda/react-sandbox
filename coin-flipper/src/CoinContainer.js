@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import Coin from "./Coin";
-import { choice } from "./helpers";
+import React, { Component } from 'react';
+import Coin from './Coin';
+import { choice } from './helpers';
 
 class CoinContainer extends Component {
   static defaultProps = {
     coins: [
-      { side: "heads", imgSrc: "https://tinyurl.com/react-coin-heads-jpg" },
-      { side: "tails", imgSrc: "https://tinyurl.com/react-coin-tails-jpg" }
+      { side: 'heads', imgSrc: 'https://tinyurl.com/y4hofdeu' },
+      { side: 'tails', imgSrc: 'https://tinyurl.com/y2omnnj4' }
     ]
   };
   constructor(props) {
@@ -25,8 +25,8 @@ class CoinContainer extends Component {
       return {
         currCoin: newCoin,
         nFlips: st.nFlips + 1,
-        nHeads: st.nHeads + (newCoin.side === "heads" ? 1 : 0),
-        nTails: st.nTails + (newCoin.side === "tails" ? 1 : 0)
+        nHeads: st.nHeads + (newCoin.side === 'heads' ? 1 : 0),
+        nTails: st.nTails + (newCoin.side === 'tails' ? 1 : 0)
       };
     });
   }
@@ -40,7 +40,7 @@ class CoinContainer extends Component {
         {this.state.currCoin && <Coin info={this.state.currCoin} />}
         <button onClick={this.handleClick}>Flip Me!</button>
         <p>
-          Out of {this.state.nFlips} flips, there have been {this.state.nHeads}{" "}
+          Out of {this.state.nFlips} flips, there have been {this.state.nHeads}{' '}
           heads and {this.state.nTails} tails.
         </p>
       </div>
