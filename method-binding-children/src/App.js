@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import NumberList from "./NumberList";
-import BetterNumberList from "./BetterNumberList";
-import "./App.css";
+import React, { Component } from 'react';
+import NumberList from './NumberList';
+import BetterNumberList from './BetterNumberList';
+import './App.css';
 
 class App extends Component {
   render() {
