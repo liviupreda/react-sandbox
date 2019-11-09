@@ -12,7 +12,8 @@ class Form extends Component {
     this.setState({ username: e.target.value });
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     alert(`You entered: ${this.state.username}`);
     this.setState({ username: '' });
   }
