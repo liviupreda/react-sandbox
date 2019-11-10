@@ -20,7 +20,6 @@ class MultipleForm extends Component {
       <div>
         <h1>Form w/ Multiple Inputs</h1>
         <form onSubmit={this.handleSubmit}>
-          {/* <label htmlFor='username' name='Sal' /> */}
           <input
             type='text'
             name='username'
