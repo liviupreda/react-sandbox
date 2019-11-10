@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class MultipleForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { username: "", email: "", password: "" };
+    this.state = { username: '', email: '', password: '' };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -13,13 +13,14 @@ class MultipleForm extends Component {
   handleSubmit(evt) {
     evt.preventDefault();
     alert(`You typed: ${this.state.username}`);
-    this.setState({ username: "" });
+    this.setState({ username: '' });
   }
   render() {
     return (
       <div>
         <h1>Form w/ Multiple Inputs</h1>
         <form onSubmit={this.handleSubmit}>
+          {/* <label htmlFor='username' name='Sal' /> */}
           <input
             type='text'
             name='username'
