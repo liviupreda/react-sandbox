@@ -5,15 +5,22 @@ class ShoppingListForm extends Component {
     super(props);
     this.state = { name: '', qty: '' };
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.addItem(this.state);
+    this.setState({ name: '', qty: '' });
+  }
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <label htmlFor='name'>Item Name: </label>
         <input
           type='text'
@@ -24,14 +31,13 @@ class ShoppingListForm extends Component {
         />
         <label htmlFor='qty'>Quantity (1-10): </label>
         <input
-          type='number'
+          type='text'
           id='qty'
           name='qty'
-          min='1'
-          max='10'
           value={this.state.qty}
           onChange={this.handleChange}
         />
+        <button>Add Item</button>
       </form>
     );
   }
