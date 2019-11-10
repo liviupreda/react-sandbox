@@ -1,40 +1,37 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class ShoppingListForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { name: "", qty: "" };
+    this.state = { name: '', qty: '' };
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
-  handleSubmit(evt) {
-    evt.preventDefault();
-    this.props.addItem(this.state);
-    this.setState({ name: "", qty: "" });
+
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
   }
-  handleChange(evt) {
-    this.setState({
-      [evt.target.name]: evt.target.value
-    });
-  }
+
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor='name'>Name: </label>
+      <form>
+        <label htmlFor='name'>Item Name: </label>
         <input
+          type='text'
           id='name'
           name='name'
           value={this.state.name}
           onChange={this.handleChange}
         />
-        <label htmlFor='qty'>Quantity: </label>
+        <label htmlFor='qty'>Quantity (1-10): </label>
         <input
+          type='number'
           id='qty'
           name='qty'
+          min='1'
+          max='10'
           value={this.state.qty}
           onChange={this.handleChange}
         />
-        <button>Add Item!</button>
       </form>
     );
   }
